@@ -14,13 +14,28 @@ let reviews = [
 ];
 
 const reviewList = document.getElementById("review-list");
-console.log(reviewList);
+// console.log(reviewList);
+const reviewForm = document.getElementById("review-form");
+
 
 reviews.forEach ((r) => AddReview(r));
 
+reviewForm.addEventListener("submit", function(e){
+    e.preventDefault();
+    const formData = new FormData (reviewForm);
+    const review =    {
+        comment: formData.get("review-txt"),
+        rating: formData.get("rating")
+    };
+    reviews.push(review);
+    AddReview(review);
+    reviewForm.reset();
+});
+
+
 function AddReview(r)
 {
-    console.log(r);
+    // console.log(r);
     let litem = document.createElement("li");
     let com = document.createElement("div");
     let rat = document.createElement("div");
@@ -36,4 +51,7 @@ function AddReview(r)
     litem.appendChild(rat);
     reviewList.appendChild(litem);
 }
+
+
+
 

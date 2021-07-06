@@ -112,4 +112,5 @@ h3{
     text-decoration: none;
     border-radius: 6px;
     border: none;
+    cursor: pointer;
 }
