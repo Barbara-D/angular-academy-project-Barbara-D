@@ -6,7 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TV shows app</title>
     <link rel="stylesheet" href="styles.css" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <header><h1>TV shows app</h1></header>
     <main>
@@ -20,12 +24,25 @@
             </figure>
         </section>
         <section class="show-review">
+            <h3>Reviews</h3>
             <form>
-
+                <input name="review-txt" type="text" placeholder="Add review" minlength="3" required/>
+                <br/>
+                <label for="rating">
+                    Rating
+                    <input id="rating" name="rating" type="number" min="1" max="5">
+                </label>
+                <input type="submit" value="Post">
             </form>
+
+            <div class="reviews">
+                <ul id="review-list">
+                </ul>
+            </div>
         </section>
 
     </main>
     <footer>&copy; Barbara Deskar 2021</footer>
+    <script type="text/javascript" src="index.js"></script>
 </body>
 </html>

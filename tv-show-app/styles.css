@@ -7,6 +7,7 @@ body{
     margin: 0 auto;
     color: #111113;
     background-color:#F1F6F6;
+    font-family: 'Montserrat', sans-serif;
 }
 
 main{
@@ -21,6 +22,7 @@ main{
     background-color: #1a1a1f;
     color:#F1F6F6;
     padding: 20px;
+    border-radius: 10px;
 }
 
 .text-info{
@@ -34,6 +36,7 @@ figure img{
 }
 
 header{
+    
     text-align: center;
     margin-bottom: 50px;
     margin-top: 20px;
@@ -41,4 +44,21 @@ header{
 footer{
     text-align: center;
     margin-top: 50px;
+}
+
+.commentC{
+    font-style: italic;
+    font-weight: lighter;
+}
+.listI{
+    color: #353538;
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid #353538;
+    border-radius: 10px;
+    list-style-type: none;
+}
+.ratingR{
+    text-align: right;
+    padding-top: 20px;
 }
