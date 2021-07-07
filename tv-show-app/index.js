@@ -19,6 +19,7 @@ const reviewForm = document.getElementById("review-form");
 
 
 reviews.forEach ((r) => AddReview(r));
+CalculateAvg();
 
 reviewForm.addEventListener("submit", function(e){
     e.preventDefault();
@@ -30,6 +31,7 @@ reviewForm.addEventListener("submit", function(e){
     reviews.push(review);
     AddReview(review);
     reviewForm.reset();
+    CalculateAvg();
 });
 
 
@@ -50,8 +52,23 @@ function AddReview(r)
     litem.appendChild(com);
     litem.appendChild(rat);
     reviewList.appendChild(litem);
-}
+};
 
+function CalculateAvg()
+{
+    let ratingSum=0;
+    reviews.forEach(function(r){
+        ratingSum+=parseFloat(r.rating);
+    });
+    console.log(ratingSum);
 
+    let avgRating=ratingSum/reviews.length;
+    avgRating = Math.round(avgRating*100)/100;
+    let avgdiv = document.getElementById("avg-rating");
+    avgdiv.textContent="Average rating: " + avgRating;
+    avgdiv.classList.add("avgC");
+    // console.log(avgRating);
+    //add to an element
+};
 
 
