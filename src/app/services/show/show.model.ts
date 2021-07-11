@@ -10,4 +10,9 @@ export class Show {
 	description: string;
 	averageRating: number;
 	imageUrl: string;
+
+	calculatePercentage() {
+		console.log(Math.round((this.averageRating/5)*100)+"%");
+
+	}
 }
