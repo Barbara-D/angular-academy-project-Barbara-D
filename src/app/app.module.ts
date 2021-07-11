@@ -7,10 +7,11 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MainLayoutComponent } from './components/main-layout/main-layout.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
+import { AllShowsContainerComponent } from './pages/all-shows-container/all-shows-container.component';
 
 
 @NgModule({
-	declarations: [AppComponent, MainLayoutComponent, SidenavComponent],
+	declarations: [AppComponent, MainLayoutComponent, SidenavComponent, AllShowsContainerComponent],
 	imports: [BrowserModule, BrowserAnimationsModule, MatCardModule, MatSidenavModule],
 	providers: [],
 	bootstrap: [AppComponent],
