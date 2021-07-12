@@ -1,0 +1,12 @@
+<ng-container *ngFor="let show of shows">
+	<app-show-card
+		[title]="show.title"
+		[imageUrl]="show.imageUrl"
+		[averageRating]="show.averageRating"
+	></app-show-card>
+</ng-container>
+
+
+<!-- 
+[description]="show.description"
+[averageRating]="show.averageRating" -->

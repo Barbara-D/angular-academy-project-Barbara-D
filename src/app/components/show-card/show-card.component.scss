@@ -1,0 +1,21 @@
+:host{
+	display: inline-block;
+}
+.show-card{
+	padding:0;
+	border-radius: 24px;
+	margin: 15px;
+	width: 240px;
+	overflow: hidden;
+}
+
+.show-card img{
+	width: 240px;
+	height: 300px;
+	object-fit: cover;
+}
+
+.show-card-text{
+	padding-left: 10px;
+	padding-bottom: 10px;
+}

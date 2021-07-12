@@ -1,0 +1,8 @@
+<mat-card class="show-card" (click)="onClick()">
+	<img [src]="imageUrl">
+	<div class="show-card-text">
+		<h3> {{title}} </h3>
+		<app-rating [averageRating] = "averageRating"></app-rating>
+	</div>
+
+</mat-card>
