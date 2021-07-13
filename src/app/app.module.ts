@@ -13,11 +13,12 @@ import { AllShowsContainerComponent } from './pages/all-shows-container/all-show
 import { ShowListComponent } from './components/show-list/show-list.component';
 import { ShowCardComponent } from './components/show-card/show-card.component';
 import { RatingComponent } from './components/rating/rating.component';
+import { AppRoutingModule } from './app-routing.module';
 
 
 @NgModule({
 	declarations: [AppComponent, MainLayoutComponent, SidenavComponent, AllShowsContainerComponent, ShowListComponent, ShowCardComponent, RatingComponent],
-	imports: [BrowserModule, BrowserAnimationsModule, MatCardModule, MatSidenavModule, MatIconModule],
+	imports: [BrowserModule, BrowserAnimationsModule, MatCardModule, MatSidenavModule, MatIconModule, AppRoutingModule],
 	providers: [],
 	bootstrap: [AppComponent],
 })
