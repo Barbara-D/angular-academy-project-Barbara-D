@@ -2,15 +2,17 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MainLayoutComponent } from './components/main-layout/main-layout.component';
 import { AllShowsContainerComponent } from './pages/all-shows-container/all-shows-container.component';
+import { TopRatedContainerComponent } from './pages/top-rated-container/top-rated-container.component';
 
 const routes: Routes = [
   { path: '', 
   component: MainLayoutComponent,
   children:[
-    {path: '', component: AllShowsContainerComponent}
+    {path: '', component: AllShowsContainerComponent},
+    {path: 'top-rated', component: TopRatedContainerComponent}
   ],
   },
-  { path: '**',   redirectTo: '', pathMatch: 'full' },
+  { path: '**',   redirectTo: '' },
   // redirect vs wildcards
   // { path: '**', component:  MainLayoutComponent,
   //   children:[{path: '', component: AllShowsContainerComponent}

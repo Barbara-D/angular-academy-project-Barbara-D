@@ -14,10 +14,11 @@ import { ShowListComponent } from './components/show-list/show-list.component';
 import { ShowCardComponent } from './components/show-card/show-card.component';
 import { RatingComponent } from './components/rating/rating.component';
 import { AppRoutingModule } from './app-routing.module';
+import { TopRatedContainerComponent } from './pages/top-rated-container/top-rated-container.component';
 
 
 @NgModule({
-	declarations: [AppComponent, MainLayoutComponent, SidenavComponent, AllShowsContainerComponent, ShowListComponent, ShowCardComponent, RatingComponent],
+	declarations: [AppComponent, MainLayoutComponent, SidenavComponent, AllShowsContainerComponent, ShowListComponent, ShowCardComponent, RatingComponent, TopRatedContainerComponent],
 	imports: [BrowserModule, BrowserAnimationsModule, MatCardModule, MatSidenavModule, MatIconModule, AppRoutingModule],
 	providers: [],
 	bootstrap: [AppComponent],
