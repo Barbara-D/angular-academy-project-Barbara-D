@@ -54,15 +54,15 @@ export class ShowService {
 
   constructor() { }
 
-  getShows (): Array<Show>{
+  public getShows (): Array<Show>{
     return this.rawData.map((rawShowData)=> new Show(rawShowData));
   }
 
-  getTopRated (): Array<Show>{
-    return this.getShows().filter((show: Show) => show.averageRating>4)
+  public getTopRated (): Array<Show>{
+    return this.getShows().filter((show: Show) => show.averageRating>4);
   }
 
-  getById (id: string): Show | undefined { 
+  public getById (id: string): Show | undefined { 
     return this.getShows().find((show: Show) => show.id === id);
   }
 }

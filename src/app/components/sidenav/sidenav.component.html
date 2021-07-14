@@ -1,4 +1,14 @@
 <ul>
+	<li *ngFor = "let link of links">
+		<a [routerLink]= "link.url" routerLinkActive="active" [routerLinkActiveOptions] = "{ exact: true }">
+			{{ link.title }}
+		</a>
+	</li>
+</ul>
+
+
+
+<!-- <ul>
 	<li>
 		<a routerLink="/" routerLinkActive="active">All shows</a>
 	</li>
@@ -8,4 +18,4 @@
 	<li>
 		<a href="#">My profile</a>
 	</li>
-</ul>
+</ul> -->

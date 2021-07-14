@@ -11,9 +11,8 @@ export class ShowCardComponent {
   @Input() averageRating: number;
   @Input() imageUrl: string;
 
-  onClick()
-  {
-    console.log(this.title);
-  }
+  // onClick()
+  // { console.log(this.title);
+  // } hw2
 
 }

@@ -14,7 +14,7 @@ export class AllShowsContainerComponent implements OnInit {
   constructor(private ShowService:ShowService) { }
   
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.shows = this.ShowService.getShows ();
     this.shows.forEach((show) => show.calculatePercentage()); 
   }
