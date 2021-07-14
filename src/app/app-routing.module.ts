@@ -9,7 +9,12 @@ const routes: Routes = [
   children:[
     {path: '', component: AllShowsContainerComponent}
   ],
-  }
+  },
+  { path: '**',   redirectTo: '', pathMatch: 'full' },
+  // redirect vs wildcards
+  // { path: '**', component:  MainLayoutComponent,
+  //   children:[{path: '', component: AllShowsContainerComponent}
+  // ],}
 ];
 
 @NgModule({
