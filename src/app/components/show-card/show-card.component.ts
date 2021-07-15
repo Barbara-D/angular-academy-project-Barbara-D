@@ -8,13 +8,11 @@ import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 })
 export class ShowCardComponent {
   @Input() title: string;
-  @Input() description: string;
   @Input() averageRating: number;
   @Input() imageUrl: string;
 
-  onClick()
-  {
-    console.log(this.title);
-  }
+  // onClick()
+  // { console.log(this.title);
+  // } hw2
 
 }

@@ -1,0 +1,24 @@
+.show-details-container{
+	width:80%;
+	max-width: 500px;
+	margin: 0 auto;
+	margin-top: 10px;
+}
+
+.show-details-container img{
+	width:100%;
+	max-width: 600px;
+	margin: 0 auto;
+}
+
+.show-details{
+	padding-top: 20px;
+	display: flex;
+	align-content: center;
+	justify-content: space-between;
+}
+
+.show-details p{
+	flex-basis: 65%;
+	padding-left:10px;
+}
