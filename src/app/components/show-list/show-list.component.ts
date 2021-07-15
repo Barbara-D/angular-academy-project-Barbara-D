@@ -8,8 +8,6 @@ import {Show} from "../../services/show/show.model"
 })
 export class ShowListComponent implements OnInit {
 
-  constructor() { }
-
   ngOnInit(): void {
   }
   @Input() shows: Array<Show>;

@@ -52,9 +52,6 @@ export class ShowService {
     },    
   ];
 
-
-  constructor() { }
-
   public getShows (): Array<Show>{
     return this.rawData.map((rawShowData: IRawShow)=> new Show(rawShowData));
   }

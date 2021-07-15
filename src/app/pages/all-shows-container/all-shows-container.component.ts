@@ -9,9 +9,9 @@ import { ShowService } from 'src/app/services/show.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AllShowsContainerComponent implements OnInit {
-  
-  shows: Array<Show>;
-  constructor(private ShowService:ShowService) { }
+
+  public shows: Array<Show>;
+  public constructor(private ShowService:ShowService) { }
   
 
   ngOnInit(): void {
