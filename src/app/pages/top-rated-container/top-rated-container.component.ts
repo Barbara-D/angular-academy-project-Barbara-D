@@ -10,7 +10,7 @@ import { ShowService } from 'src/app/services/show.service';
 })
 export class TopRatedContainerComponent implements OnInit {
 
-  shows: Array<Show>;
+  public shows: Array<Show>;
   constructor(private ShowService:ShowService) { }
 
   ngOnInit(): void {

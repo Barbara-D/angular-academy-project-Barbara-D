@@ -1,5 +1,7 @@
+import { IRawShow } from "src/app/interfaces/rawShow.interface";
+
 export class Show {
-	constructor (rawShowData:any){
+	constructor (rawShowData:IRawShow){
 		this.id = rawShowData.id;
 		this.title = rawShowData.title;
 		this.description = rawShowData.description || "Default description";
@@ -13,8 +15,7 @@ export class Show {
 	averageRating: number;
 	imageUrl: string;
 
-	calculatePercentage() {
+	public calculatePercentage() {
 		console.log(Math.round((this.averageRating/5)*100)+"%");
 	}
-
 }

@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
+import { IRawShow } from '../interfaces/rawShow.interface';
 import { Show } from './show/show.model'; 
 
 @Injectable({
   providedIn: 'root'
 })
 export class ShowService {
-  private rawData: Array<any> = [
+  private rawData: Array<IRawShow> = [
     {
       id: "1",
       title: "Black Mirror",
@@ -24,7 +25,7 @@ export class ShowService {
       id: "3",
       title: "Buffy the Vampire Slayer",
       description: "A young woman, destined to slay vampires, demons and other infernal creatures, deals with her life fighting evil, with the help of her friends.",
-      averageRating: 4.1,
+      averageRating: 3.9,
       imageUrl: "https://paramountnetwork.mtvnimages.com/uri/mgid:arc:content:web.paramountplus.it:14013944-c312-42f4-a0d6-ec440804ccdd?quality=0.7",
     },    
 
@@ -55,7 +56,7 @@ export class ShowService {
   constructor() { }
 
   public getShows (): Array<Show>{
-    return this.rawData.map((rawShowData)=> new Show(rawShowData));
+    return this.rawData.map((rawShowData: IRawShow)=> new Show(rawShowData));
   }
 
   public getTopRated (): Array<Show>{
