@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { of } from 'rxjs';
-import {delay, filter, map} from "rxjs/internal/operators";
+import {delay, map} from "rxjs/internal/operators";
 import { Observable } from 'rxjs';
-import { IRawShow } from '../interfaces/rawShow.interface';
-import { Show } from './show/show.model'; 
+import { IRawShow } from '../../interfaces/rawShow.interface';
+import { Show } from './show.model'; 
 
 @Injectable({
   providedIn: 'root'
@@ -60,7 +60,7 @@ export class ShowService {
   };
 
   public getShows (): Observable<Array<Show>>{
-    return of(this.shows).pipe(delay (1000)) ;
+    return of(this.shows).pipe(delay (1000 + Math.random()*1000)) ;
   };
 
   public getTopRated (): Observable<Array<Show>>{

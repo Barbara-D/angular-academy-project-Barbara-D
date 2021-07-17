@@ -1,7 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Show } from 'src/app/services/show/show.model';
-import { ShowService } from 'src/app/services/show.service';
+import { ShowService } from 'src/app/services/show/show.service';
 import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/internal/operators';
 import { of } from 'rxjs/internal/observable/of';

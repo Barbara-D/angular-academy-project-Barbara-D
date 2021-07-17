@@ -1,6 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Show } from 'src/app/services/show/show.model';
-import { ShowService } from 'src/app/services/show.service';
+import { ShowService } from 'src/app/services/show/show.service';
 import { Observable } from 'rxjs';
 
 @Component({
