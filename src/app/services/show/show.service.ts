@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { of } from 'rxjs';
-import {delay, map} from "rxjs/internal/operators";
+import { of, throwError } from 'rxjs';
+import {delay, map, retry} from "rxjs/internal/operators";
 import { Observable } from 'rxjs';
 import { IRawShow } from '../../interfaces/rawShow.interface';
 import { Show } from './show.model'; 
@@ -60,7 +60,13 @@ export class ShowService {
   };
 
   public getShows (): Observable<Array<Show>>{
-    return of(this.shows).pipe(delay (1000 + Math.random()*1000)) ;
+    if (Math.random() < 0.1)
+    {
+      return throwError("Cannot access data!");
+    }
+    else {
+      return of(this.shows).pipe(delay (1000 + Math.random()*1000)) ;
+    }
   };
 
   public getTopRated (): Observable<Array<Show>>{
