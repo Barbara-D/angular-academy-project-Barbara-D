@@ -1,2 +1,6 @@
-<app-review></app-review>
-<app-review></app-review>
+<ng-container *ngFor = "let review of reviews">
+	<app-review
+		[comment]="review.comment"
+		[rating]="review.rating">
+	</app-review>
+</ng-container>

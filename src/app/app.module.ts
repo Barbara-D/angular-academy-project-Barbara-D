@@ -19,10 +19,11 @@ import { ShowDetailsContainerComponent } from './pages/show-details-container/sh
 import { ShowDetailsComponent } from './pages/show-details-container/components/show-details/show-details.component';
 import { ReviewListComponent } from './pages/show-details-container/components/review-list/review-list.component';
 import { ReviewComponent } from './components/review/review.component';
+import { ReviewsEmptyComponent } from './components/reviews-empty/reviews-empty.component';
 
 
 @NgModule({
-	declarations: [AppComponent, MainLayoutComponent, SidenavComponent, AllShowsContainerComponent, ShowListComponent, ShowCardComponent, RatingComponent, TopRatedContainerComponent, ShowDetailsContainerComponent, ShowDetailsComponent, ReviewListComponent, ReviewComponent],
+	declarations: [AppComponent, MainLayoutComponent, SidenavComponent, AllShowsContainerComponent, ShowListComponent, ShowCardComponent, RatingComponent, TopRatedContainerComponent, ShowDetailsContainerComponent, ShowDetailsComponent, ReviewListComponent, ReviewComponent, ReviewsEmptyComponent],
 	imports: [BrowserModule, BrowserAnimationsModule, MatCardModule, MatSidenavModule, MatIconModule, AppRoutingModule],
 	providers: [],
 	bootstrap: [AppComponent],

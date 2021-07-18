@@ -1,7 +1,9 @@
-<ng-container *ngIf = '(show$ | async) as show'>
+<ng-container *ngIf = '(show$ | async) as show; else loading'>
 	<app-show-details [show] = "show"></app-show-details>
-	<app-review-list></app-review-list>
-	<!-- <ng-container *ngIf = '(reviews$ | async) as reviews'>
-		<app-show-reviews></app-show-reviews>
-	</ng-container> -->
+
+	<ng-container *ngIf = '(reviews$ | async) as reviews; else empty'>
+		<app-review-list [reviews] = "reviews"></app-review-list>
+	</ng-container>
+	<ng-template #empty>Content to render when condition is false.</ng-template>
 </ng-container>
+<ng-template #loading>load load</ng-template>
