@@ -38,7 +38,9 @@ export class ShowDetailsContainerComponent{
       {
         return this.ReviewService.getByShowId(id);
       }
-      return of(null);
+      else{
+        return of(null);
+      }
     })
   );
 

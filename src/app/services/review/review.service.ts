@@ -53,7 +53,7 @@ export class ReviewService {
   };
 
   public getReviews(): Observable<Array<Review>>{
-    return of(this.reviews).pipe(delay (1000 + Math.random()*1000)) ;
+    return of(this.reviews).pipe();
   }
 
   public getByShowId(showId: string): Observable<Array<Review> | null>{

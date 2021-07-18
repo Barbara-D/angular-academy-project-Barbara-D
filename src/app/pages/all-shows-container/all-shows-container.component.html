@@ -1,3 +1,7 @@
-<ng-container *ngIf = '(shows$ | async) as shows'>
+<ng-container *ngIf = '(shows$ | async) as shows; else loading'>
 	<app-show-list [shows]="shows"></app-show-list>
 </ng-container>
+
+<ng-template #loading>
+	<app-loader></app-loader>
+</ng-template>

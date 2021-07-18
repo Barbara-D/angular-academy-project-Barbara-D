@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { MatCardModule } from '@angular/material/card';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatIconModule} from '@angular/material/icon';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 import { AppComponent } from './app.component';
@@ -20,11 +21,12 @@ import { ShowDetailsComponent } from './pages/show-details-container/components/
 import { ReviewListComponent } from './pages/show-details-container/components/review-list/review-list.component';
 import { ReviewComponent } from './components/review/review.component';
 import { ReviewsEmptyComponent } from './components/reviews-empty/reviews-empty.component';
+import { LoaderComponent } from './components/loader/loader.component';
 
 
 @NgModule({
-	declarations: [AppComponent, MainLayoutComponent, SidenavComponent, AllShowsContainerComponent, ShowListComponent, ShowCardComponent, RatingComponent, TopRatedContainerComponent, ShowDetailsContainerComponent, ShowDetailsComponent, ReviewListComponent, ReviewComponent, ReviewsEmptyComponent],
-	imports: [BrowserModule, BrowserAnimationsModule, MatCardModule, MatSidenavModule, MatIconModule, AppRoutingModule],
+	declarations: [AppComponent, MainLayoutComponent, SidenavComponent, AllShowsContainerComponent, ShowListComponent, ShowCardComponent, RatingComponent, TopRatedContainerComponent, ShowDetailsContainerComponent, ShowDetailsComponent, ReviewListComponent, ReviewComponent, ReviewsEmptyComponent, LoaderComponent],
+	imports: [BrowserModule, BrowserAnimationsModule, MatCardModule, MatSidenavModule, MatIconModule, AppRoutingModule, MatProgressSpinnerModule],
 	providers: [],
 	bootstrap: [AppComponent],
 })
