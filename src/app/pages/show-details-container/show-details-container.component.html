@@ -1,7 +1,7 @@
-<ng-container *ngIf = '(show$ | async) as show; else loading'>
+<ng-container *ngIf = "(show$ | async) as show; else loading">
 	<app-show-details [show] = "show"></app-show-details>
 
-	<ng-container *ngIf = '(reviews$ | async) as reviews'>
+	<ng-container *ngIf = "(reviews$ | async) as reviews">
 		<app-review-list [reviews] = "reviews"></app-review-list>
 	</ng-container>
 </ng-container>	
