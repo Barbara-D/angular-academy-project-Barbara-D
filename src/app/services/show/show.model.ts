@@ -1,5 +1,6 @@
 import { IRawShow } from "src/app/interfaces/rawShow.interface";
 
+
 export class Show {
 	public constructor (rawShowData:IRawShow){
 		this.id = rawShowData.id;

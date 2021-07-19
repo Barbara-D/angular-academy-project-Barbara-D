@@ -1,0 +1,13 @@
+
+	<ng-container *ngIf = "reviews.length !== 0; else empty">
+		<ng-container *ngFor = "let review of reviews">
+			<app-review
+				[comment]="review.comment"
+				[rating]="review.rating">
+			</app-review>
+		</ng-container>
+	</ng-container>
+	
+	<ng-template #empty><app-reviews-empty></app-reviews-empty></ng-template>
+
+
