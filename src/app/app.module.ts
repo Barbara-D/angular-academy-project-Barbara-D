@@ -4,6 +4,8 @@ import { MatCardModule } from '@angular/material/card';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatIconModule} from '@angular/material/icon';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
 
 
 import { AppComponent } from './app.component';
@@ -29,7 +31,7 @@ import { RegisterFormComponent } from './pages/register-container/components/reg
 
 @NgModule({
 	declarations: [AppComponent, MainLayoutComponent, SidenavComponent, AllShowsContainerComponent, ShowListComponent, ShowCardComponent, RatingComponent, TopRatedContainerComponent, ShowDetailsContainerComponent, ShowDetailsComponent, ReviewListComponent, ReviewComponent, ReviewsEmptyComponent, LoaderComponent, FormLayoutComponent, RegisterContainerComponent, RegisterFormComponent],
-	imports: [BrowserModule, BrowserAnimationsModule, MatCardModule, MatSidenavModule, MatIconModule, AppRoutingModule, MatProgressSpinnerModule],
+	imports: [MatInputModule, BrowserModule, BrowserAnimationsModule, MatCardModule, MatSidenavModule, MatIconModule, AppRoutingModule, MatProgressSpinnerModule,MatFormFieldModule],
 	providers: [],
 	bootstrap: [AppComponent],
 })
