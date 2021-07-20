@@ -22,10 +22,13 @@ import { ReviewListComponent } from './pages/show-details-container/components/r
 import { ReviewComponent } from './components/review/review.component';
 import { ReviewsEmptyComponent } from './components/reviews-empty/reviews-empty.component';
 import { LoaderComponent } from './components/loader/loader.component';
+import { FormLayoutComponent } from './components/form-layout/form-layout.component';
+import { RegisterContainerComponent } from './pages/register-container/register-container.component';
+import { RegisterFormComponent } from './pages/register-container/components/register-form/register-form.component';
 
 
 @NgModule({
-	declarations: [AppComponent, MainLayoutComponent, SidenavComponent, AllShowsContainerComponent, ShowListComponent, ShowCardComponent, RatingComponent, TopRatedContainerComponent, ShowDetailsContainerComponent, ShowDetailsComponent, ReviewListComponent, ReviewComponent, ReviewsEmptyComponent, LoaderComponent],
+	declarations: [AppComponent, MainLayoutComponent, SidenavComponent, AllShowsContainerComponent, ShowListComponent, ShowCardComponent, RatingComponent, TopRatedContainerComponent, ShowDetailsContainerComponent, ShowDetailsComponent, ReviewListComponent, ReviewComponent, ReviewsEmptyComponent, LoaderComponent, FormLayoutComponent, RegisterContainerComponent, RegisterFormComponent],
 	imports: [BrowserModule, BrowserAnimationsModule, MatCardModule, MatSidenavModule, MatIconModule, AppRoutingModule, MatProgressSpinnerModule],
 	providers: [],
 	bootstrap: [AppComponent],
