@@ -27,6 +27,7 @@
 			matInput required
 			formControlName="repeatedPassword">
 			<mat-icon matPrefix>lock</mat-icon>
+			<mat-error *ngIf="registerFormGroup.get('password')?.value != registerFormGroup.get('repeatedPassword')?.value">Passwords do not match</mat-error>
 		</mat-form-field>
 
 	<button 
@@ -35,4 +36,5 @@
 		[disabled] = "registerFormGroup.invalid"
 		>Register</button>
 	</form>
+	<p class="other-form">Already have an account? <a href="login">Login</a></p>
 </mat-card>

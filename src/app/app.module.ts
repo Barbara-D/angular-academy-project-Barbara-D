@@ -29,6 +29,8 @@ import { LoaderComponent } from './components/loader/loader.component';
 import { FormLayoutComponent } from './components/form-layout/form-layout.component';
 import { RegisterContainerComponent } from './pages/register-container/register-container.component';
 import { RegisterFormComponent } from './pages/register-container/components/register-form/register-form.component';
+import { LoginContainerComponent } from './pages/login-container/login-container.component';
+import { LoginFormComponent } from './pages/login-container/components/login-form/login-form.component';
 
 
 @NgModule({
@@ -50,6 +52,8 @@ import { RegisterFormComponent } from './pages/register-container/components/reg
 			ShowListComponent,
 			SidenavComponent,
 			TopRatedContainerComponent,
+   LoginContainerComponent,
+   LoginFormComponent,
 		],
 
 	imports: [

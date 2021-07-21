@@ -5,6 +5,6 @@ export function forbiddenMailValidator(control: FormControl): ValidationErrors |
 	const enteredValue:string = control.value || '';
 	const hasForbidden: boolean = enteredValue.includes(forbiddenWord);
 
-	return (hasForbidden) ? { badWord: "that's illegal" } : null;
+	return (hasForbidden) ? { badWord: "That's illegal" } : null;
 
 }
