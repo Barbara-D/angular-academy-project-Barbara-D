@@ -7,6 +7,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
+import {MatButtonModule} from '@angular/material/button';
 
 
 import { AppComponent } from './app.component';
@@ -62,6 +63,7 @@ import { RegisterFormComponent } from './pages/register-container/components/reg
 		 MatFormFieldModule,
 		 MatInputModule,
 		 ReactiveFormsModule,
+		 MatButtonModule,
 	],
 
 	providers: [],

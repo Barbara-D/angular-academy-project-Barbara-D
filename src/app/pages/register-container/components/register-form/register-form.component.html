@@ -8,7 +8,7 @@
 				placeholder="example@example.com"
 				formControlName="email">
 			<mat-icon matPrefix>person</mat-icon>    
-			<mat-error>hell no</mat-error>
+			<mat-error *ngIf="registerFormGroup.get('email')?.invalid">{{getErrorMessage()}}</mat-error>
 
 		</mat-form-field>
 
@@ -28,5 +28,11 @@
 			formControlName="repeatedPassword">
 			<mat-icon matPrefix>lock</mat-icon>
 		</mat-form-field>
+
+	<button 
+		mat-raised-button color="primary"
+		(click) = "onRegister()"
+		[disabled] = "registerFormGroup.invalid"
+		>Register</button>
 	</form>
 </mat-card>
