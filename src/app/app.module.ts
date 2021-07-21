@@ -6,6 +6,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
@@ -30,8 +31,39 @@ import { RegisterFormComponent } from './pages/register-container/components/reg
 
 
 @NgModule({
-	declarations: [AppComponent, MainLayoutComponent, SidenavComponent, AllShowsContainerComponent, ShowListComponent, ShowCardComponent, RatingComponent, TopRatedContainerComponent, ShowDetailsContainerComponent, ShowDetailsComponent, ReviewListComponent, ReviewComponent, ReviewsEmptyComponent, LoaderComponent, FormLayoutComponent, RegisterContainerComponent, RegisterFormComponent],
-	imports: [MatInputModule, BrowserModule, BrowserAnimationsModule, MatCardModule, MatSidenavModule, MatIconModule, AppRoutingModule, MatProgressSpinnerModule,MatFormFieldModule],
+	declarations: [
+			AllShowsContainerComponent,
+			AppComponent,
+			FormLayoutComponent,
+			LoaderComponent,
+			MainLayoutComponent,
+			RatingComponent,
+			RegisterContainerComponent,
+			RegisterFormComponent,
+			ReviewComponent,
+			ReviewListComponent,
+			ReviewsEmptyComponent,
+			ShowCardComponent,
+			ShowDetailsComponent,
+			ShowDetailsContainerComponent,
+			ShowListComponent,
+			SidenavComponent,
+			TopRatedContainerComponent,
+		],
+
+	imports: [
+		 AppRoutingModule,
+		 BrowserAnimationsModule,
+		 BrowserModule,
+		 MatCardModule,
+		 MatIconModule,
+		 MatProgressSpinnerModule,
+		 MatSidenavModule,
+		 MatFormFieldModule,
+		 MatInputModule,
+		 ReactiveFormsModule,
+	],
+
 	providers: [],
 	bootstrap: [AppComponent],
 })
