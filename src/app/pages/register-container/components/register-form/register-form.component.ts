@@ -6,6 +6,7 @@ import { forbiddenMailValidator } from 'src/app/validators/forbidden-mail.valida
 export interface IRegisterFormData{
   email:string;
   password:string;
+  password_confirmation:string;
 }
 
 @Component({
@@ -37,13 +38,10 @@ export class RegisterFormComponent {
       return 'You must enter a value';
     }
     else if (this.registerFormGroup.get('email')?.hasError('badWord')){
-      return 'No swearing!';
+      return 'Thats illegal!';
     }
     return this.registerFormGroup.get('email')?.hasError('email') ? 'Not a valid email' : '';
   };
 
-  constructor(
-    private fb: FormBuilder,
-    private router: Router
-    ){};
+  constructor(private fb: FormBuilder){};
 }

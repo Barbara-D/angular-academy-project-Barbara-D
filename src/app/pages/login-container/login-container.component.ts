@@ -1,4 +1,7 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Router } from '@angular/router';
+import { IAccount } from 'src/app/interfaces/account.interface';
+import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
   selector: 'app-login-container',
@@ -6,11 +9,14 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   styleUrls: ['./login-container.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class LoginContainerComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
+export class LoginContainerComponent {
+  constructor(private authService: AuthService, private router: Router){}
+  
+  public login(loginAccount: IAccount): void{
+    // console.log(registerFormData);
+    this.authService.onLogin(loginAccount).subscribe();
+    this.router.navigate(['']);
   }
+
 
 }
