@@ -20,6 +20,12 @@ public links: Array<ILink> = [
   {
     url: "#",
     title: "My profile",
+  },
+
+  //just for testing, delete later
+  {
+    url: "/register",
+    title: "Register",
   }
 ]
 

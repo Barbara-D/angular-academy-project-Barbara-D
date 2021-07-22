@@ -1,4 +1,6 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
+import { AuthService } from 'src/app/services/auth/auth.service';
+import { IRegisterFormData } from './components/register-form/register-form.component';
 
 @Component({
   selector: 'app-register-container',
@@ -6,11 +8,12 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   styleUrls: ['./register-container.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class RegisterContainerComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
+export class RegisterContainerComponent  {
+  constructor(private authService: AuthService){}
+  public onAccountAdd(registerFormData: IRegisterFormData): void{
+    // console.log(registerFormData);
+    this.authService.onAccountAdd(registerFormData).subscribe();
   }
+
 
 }

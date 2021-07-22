@@ -1,7 +1,12 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { forbiddenMailValidator } from 'src/app/validators/forbidden-mail.validator';
+
+export interface IRegisterFormData{
+  email:string;
+  password:string;
+}
 
 @Component({
   selector: 'app-register-form',
@@ -10,6 +15,9 @@ import { forbiddenMailValidator } from 'src/app/validators/forbidden-mail.valida
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class RegisterFormComponent {
+  @Output() addAccount:EventEmitter<IRegisterFormData>=new EventEmitter();
+
+
   public registerFormGroup: FormGroup = this.fb.group({
     email: ['', [Validators.required, Validators.email, forbiddenMailValidator]],
     password: ['', [Validators.required, Validators.minLength(8)]],
@@ -17,9 +25,10 @@ export class RegisterFormComponent {
   });
 
   public onRegister():void{
-    console.log(this.registerFormGroup.value);
+    // console.log(this.registerFormGroup.value);
+    this.addAccount.emit(this.registerFormGroup.value);
     this.registerFormGroup.reset();
-    this.router.navigate(['']);
+    // this.router.navigate(['']);
 
   };
 
