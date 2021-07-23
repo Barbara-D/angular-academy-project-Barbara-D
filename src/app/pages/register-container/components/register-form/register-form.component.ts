@@ -21,7 +21,7 @@ export class RegisterFormComponent {
   public registerFormGroup: FormGroup = this.fb.group({
     email: ['', [Validators.required, Validators.email, forbiddenMailValidator]],
     password: ['', [Validators.required, Validators.minLength(8)]],
-    repeatedPassword: ['', [Validators.required, Validators.minLength(8)]],
+    password_confirmation: ['', [Validators.required, Validators.minLength(8)]],
   });
 
   public onRegister():void{

@@ -1,6 +1,6 @@
 <mat-card class="register-form">
 	<h2>Register</h2>
-	<form [formGroup] = registerFormGroup>
+	<form [formGroup] = "registerFormGroup">
 		<mat-form-field appearance="outline">
 			<mat-label>Email address</mat-label>
 			<input type="email" 
@@ -25,9 +25,9 @@
 			<mat-label>Repeat password</mat-label>
 			<input type="password" 
 			matInput required
-			formControlName="repeatedPassword">
+			formControlName="password_confirmation">
 			<mat-icon matPrefix>lock</mat-icon>
-			<mat-error *ngIf="registerFormGroup.get('password')?.value != registerFormGroup.get('repeatedPassword')?.value">Passwords do not match</mat-error>
+			<mat-error *ngIf="registerFormGroup.get('password')?.value !== registerFormGroup.get('password_confirmation')?.value">Passwords do not match</mat-error>
 		</mat-form-field>
 
 	<button 
@@ -36,5 +36,5 @@
 		[disabled] = "registerFormGroup.invalid"
 		>Register</button>
 	</form>
-	<p class="other-form">Already have an account? <a href="login">Login</a></p>
+	<p class="other-form">Already have an account? <a routerLink="/login">Login</a></p>
 </mat-card>

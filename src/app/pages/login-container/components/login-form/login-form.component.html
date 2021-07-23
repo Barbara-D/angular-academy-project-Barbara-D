@@ -1,6 +1,6 @@
 <mat-card class="login-form">
 	<h2>Login</h2>
-	<form [formGroup] = loginFormGroup>
+	<form [formGroup] = "loginFormGroup">
 		<mat-form-field appearance="outline">
 			<mat-label>Email address</mat-label>
 			<input type="email" 
@@ -27,5 +27,5 @@
 		[disabled] = "loginFormGroup.invalid"
 		>Login</button>
 	</form>
-	<p class="other-form">Don't have an account? <a href="register">Register</a></p>
+	<p class="other-form">Don't have an account? <a routerLink="/register">Register</a></p>
 </mat-card>
