@@ -1,6 +1,5 @@
 import { Component, ChangeDetectionStrategy, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
 import { forbiddenMailValidator } from 'src/app/validators/forbidden-mail.validator';
 
 export interface IRegisterFormData{
@@ -26,10 +25,8 @@ export class RegisterFormComponent {
   });
 
   public onRegister():void{
-    // console.log(this.registerFormGroup.value);
     this.addAccount.emit(this.registerFormGroup.value);
     this.registerFormGroup.reset();
-    // this.router.navigate(['']);
 
   };
 

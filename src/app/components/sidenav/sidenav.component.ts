@@ -22,7 +22,6 @@ public links: Array<ILink> = [
     title: "My profile",
   },
 
-  //just for testing, delete later
   {
     url: "/register",
     title: "Register",

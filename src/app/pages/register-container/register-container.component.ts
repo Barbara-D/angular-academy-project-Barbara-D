@@ -13,10 +13,8 @@ export class RegisterContainerComponent  {
   constructor(private authService: AuthService, private router: Router){}
 
   public onAccountAdd(registerFormData: IRegisterFormData): void{
-    // console.log(registerFormData);
-    this.authService.onAccountAdd(registerFormData).subscribe();
+    this.authService.onAccountAdd(registerFormData).subscribe((regData: IRegisterFormData) =>{
     this.router.navigate(['']);
-  }
-
-
-}
+    console.log(regData);
+    });
+  }}

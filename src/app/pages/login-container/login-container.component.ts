@@ -14,9 +14,9 @@ export class LoginContainerComponent {
   
   public login(loginAccount: IAccount): void{
     // console.log(registerFormData);
-    this.authService.onLogin(loginAccount).subscribe();
-    this.router.navigate(['']);
-  }
-
-
-}
+    this.authService.onLogin(loginAccount).subscribe((account:IAccount) =>
+    {
+      this.router.navigate(['']);
+      console.log(account);
+    });
+}}

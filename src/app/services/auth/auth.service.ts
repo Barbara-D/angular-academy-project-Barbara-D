@@ -15,13 +15,13 @@ export class AuthService {
   // }
 
   public onAccountAdd(authData:IRegisterFormData): Observable<IRegisterFormData>{
-    console.log(authData);
+    // console.log(authData);
     // return of(authData);
     return this.http.post<IRegisterFormData>('https://tv-shows.infinum.academy/users', authData);
   }
 
   public onLogin(loginData:IAccount): Observable<IAccount> {
-    console.log(loginData);
+    // console.log(loginData);
     return this.http.post<IAccount>('https://tv-shows.infinum.academy/users/sign_in', loginData)
 
   }
