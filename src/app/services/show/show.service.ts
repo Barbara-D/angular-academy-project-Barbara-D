@@ -60,7 +60,8 @@ export class ShowService {
   };
 
   public getShows (): Observable<Array<Show>>{
-    if (Math.random() < 0.1)
+    //fake errors
+    if (Math.random() < 0)
     {
       return throwError("Cannot access data!");
     }

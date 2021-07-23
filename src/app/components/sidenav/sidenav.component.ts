@@ -20,6 +20,11 @@ public links: Array<ILink> = [
   {
     url: "#",
     title: "My profile",
+  },
+
+  {
+    url: "/register",
+    title: "Register",
   }
 ]
 

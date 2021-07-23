@@ -1,0 +1,34 @@
+:host{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	background-color: #444;
+}
+form{
+	display: flex;
+	flex-direction: column;
+	padding: 15px;
+}
+h2{
+	padding: 10px 15px 0px 15px;
+}
+
+mat-form-field{
+	padding: 10px 0px;
+}
+
+.login-form{
+	width: 60%;
+	max-width: 400px;
+}
+
+.other-form{
+	text-align: center;
+	padding: 15px;
+	color:#444;
+}
+
+.other-form a{
+	color: #3f51b5;
+}
