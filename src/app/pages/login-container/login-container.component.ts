@@ -32,7 +32,7 @@ export class LoginContainerComponent {
     )
     .subscribe((response: HttpResponse<any>) =>
     {
-      this.router.navigate(['']);
+      // this.router.navigate(['']);
       console.log(response);
     });
 

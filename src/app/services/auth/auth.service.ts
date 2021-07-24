@@ -5,12 +5,14 @@ import { tap } from 'rxjs/internal/operators';
 import { IAccount } from 'src/app/interfaces/account.interface';
 import { IAuthData } from 'src/app/interfaces/auth-data.interface';
 import { IRegisterFormData } from 'src/app/pages/register-container/components/register-form/register-form.component';
+import { StorageService } from '../storage.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  constructor(private http: HttpClient){};
+  private readonly authDataKey:string = 'authData';
+  constructor(private http: HttpClient, private storage: StorageService){};
 
   // private get accounts(): Observable<Array<Auth>>{
   //   return this.http.get<Array<Auth>>('https://tv-shows.infinum.academy/users');
@@ -30,13 +32,16 @@ export class AuthService {
       const access : string | null = response.headers.get('access-token');
       const client: string | null = response.headers.get('client');
 
-      console.log(uid, access, client);
+      if ( uid && access && client){
+        this.saveAuthData({uid, access, client}); 
+      }
+      // console.log(uid, access, client);
     })
     );
   }
 
   private saveAuthData(authData:IAuthData): void{
-    
+    this.storage.add(this.authDataKey, authData);
   }
 
 }
