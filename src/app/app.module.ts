@@ -33,7 +33,8 @@ import { RegisterContainerComponent } from './pages/register-container/register-
 import { RegisterFormComponent } from './pages/register-container/components/register-form/register-form.component';
 import { LoginContainerComponent } from './pages/login-container/login-container.component';
 import { LoginFormComponent } from './pages/login-container/components/login-form/login-form.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
 
 
 @NgModule({
@@ -75,7 +76,13 @@ import { HttpClientModule } from '@angular/common/http';
 		 MatSnackBarModule
 	],
 
-	providers: [],
+	providers: [
+		{
+			provide: HTTP_INTERCEPTORS,
+			useClass: AuthInterceptor,
+			multi: true,
+		},
+	],
 	bootstrap: [AppComponent],
 })
 export class AppModule {}

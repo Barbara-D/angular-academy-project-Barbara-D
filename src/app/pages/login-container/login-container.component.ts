@@ -1,4 +1,3 @@
-import { HttpResponse } from '@angular/common/http';
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
@@ -30,13 +29,14 @@ export class LoginContainerComponent {
         return throwError(err);
     })
     )
-    .subscribe((response: HttpResponse<any>) =>
+    .subscribe(() =>
     {
-      // this.router.navigate(['']);
-      console.log(response);
+      this.router.navigate(['']);
     });
 
 }  
 private openSnackBar(message: string, action: string) {
-  this._snackBar.open(message, action);
+  this._snackBar.open(message, action, {
+    duration: 5000
+  });
 }}
