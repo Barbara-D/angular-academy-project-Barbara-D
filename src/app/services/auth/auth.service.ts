@@ -44,4 +44,8 @@ export class AuthService {
     this.storage.add(this.authDataKey, authData);
   }
 
+  public getAuthData(): IAuthData | null{
+    return this.storage.get(this.authDataKey);
+  }
+
 }
