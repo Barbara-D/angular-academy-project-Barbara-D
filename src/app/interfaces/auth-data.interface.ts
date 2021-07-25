@@ -1,5 +1,5 @@
 export interface IAuthData{
 	uid: string;
-	access: string;
+	"access-token": string;
 	client: string;
 }

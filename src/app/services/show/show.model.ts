@@ -6,8 +6,8 @@ export class Show {
 		this.id = rawShowData.id;
 		this.title = rawShowData.title;
 		this.description = rawShowData.description || "Default description";
-		this.averageRating = rawShowData.averageRating;
-		this.imageUrl = rawShowData.imageUrl;
+		this.averageRating = rawShowData.average_rating;
+		this.imageUrl = rawShowData.image_url;
 	}
 
 	public id:string;
@@ -20,3 +20,4 @@ export class Show {
 		console.log(Math.round((this.averageRating/5)*100)+"%");
 	}
 }
+

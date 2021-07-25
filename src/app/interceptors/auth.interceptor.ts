@@ -23,12 +23,12 @@ export class AuthInterceptor implements HttpInterceptor {
      finalRequest = request.clone({
       headers: new HttpHeaders({
         uid: authData.uid,
-        'access-token': authData.access,
+        'access-token': authData['access-token'],
         client: authData.client,
       })});
      console.log('old: ', request.headers.get('access-token'));
      console.log('new: ', finalRequest.headers.get('access-token'));
      }
-    return next.handle(request);
+    return next.handle(finalRequest);
   }
 }
