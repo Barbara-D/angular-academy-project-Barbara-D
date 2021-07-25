@@ -1,6 +1,7 @@
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
+import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 import { tap } from 'rxjs/internal/operators';
 import { IAccount } from 'src/app/interfaces/account.interface';
 import { IAuthData } from 'src/app/interfaces/auth-data.interface';
@@ -12,6 +13,7 @@ import { StorageService } from '../storage.service';
 })
 export class AuthService {
   private readonly authDataKey:string = 'authData';
+  public isLoggedIn$: BehaviorSubject<boolean> = new BehaviorSubject(Boolean(this.getAuthData()));
   constructor(private http: HttpClient, private storage: StorageService){};
 
   // private get accounts(): Observable<Array<Auth>>{
@@ -33,7 +35,8 @@ export class AuthService {
       const client: string | null = response.headers.get('client');
 
       if ( uid && access && client){
-        this.saveAuthData({uid, access, client}); 
+        this.saveAuthData({uid, access, client});
+        this.isLoggedIn$.next(true);
       }
       // console.log(uid, access, client);
     })
