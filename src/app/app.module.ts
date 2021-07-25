@@ -35,6 +35,7 @@ import { LoginContainerComponent } from './pages/login-container/login-container
 import { LoginFormComponent } from './pages/login-container/components/login-form/login-form.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { AuthErrorInterceptor } from './interceptors/auth-error.interceptor';
 
 
 @NgModule({
@@ -80,6 +81,11 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
 		{
 			provide: HTTP_INTERCEPTORS,
 			useClass: AuthInterceptor,
+			multi: true,
+		},
+		{
+			provide: HTTP_INTERCEPTORS,
+			useClass: AuthErrorInterceptor,
 			multi: true,
 		},
 	],

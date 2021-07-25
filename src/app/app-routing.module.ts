@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: '', 
   component: MainLayoutComponent,
   children:[
-    {path: '', component: AllShowsContainerComponent, canActivate: [AppGuard]},
+    {path: '', component: AllShowsContainerComponent},
     {path: 'top-rated', component: TopRatedContainerComponent},
     {path: 'show/:id', component: ShowDetailsContainerComponent}
   ],
