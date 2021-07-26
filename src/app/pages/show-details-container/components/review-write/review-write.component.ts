@@ -8,19 +8,19 @@ import { IReview } from 'src/app/interfaces/review.interface';
   styleUrls: ['./review-write.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ReviewWriteComponent implements OnInit {
+export class ReviewWriteComponent{
   @Output() addReview: EventEmitter<IReview>=new EventEmitter();
   constructor(private fb: FormBuilder) { }
 
-  ngOnInit(): void {
-  }
+
   public reviewFormGroup: FormGroup = this.fb.group({
     comment: ['', [Validators.required]],
     rating: ['', [Validators.required, Validators.min(1), Validators.max(5)]],
   });
 
-  onSubmit(): void{
+  public onSubmit(): void{
     this.addReview.emit(this.reviewFormGroup.value);
     this.reviewFormGroup.reset();
   };
 }
+ 

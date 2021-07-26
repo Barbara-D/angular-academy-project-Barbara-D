@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/internal/operators';
 import { of } from 'rxjs/internal/observable/of';
 import { Review } from 'src/app/services/review/review.model';
+import { IReview } from 'src/app/interfaces/review.interface';
 
 @Component({
   selector: 'app-show-details-container',
@@ -16,7 +17,7 @@ import { Review } from 'src/app/services/review/review.model';
 })
 export class ShowDetailsContainerComponent{
 
-  public constructor(private route:ActivatedRoute, private ShowService:ShowService, private ReviewService:ReviewService) { }
+  public constructor(private route:ActivatedRoute, private showService:ShowService, private reviewService:ReviewService) { }
 
   // public show: Show | undefined;
 
@@ -25,7 +26,7 @@ export class ShowDetailsContainerComponent{
       const id: string | null = paramMap.get("id");
       if (id)
       {
-        return this.ShowService.getById(id);
+        return this.showService.getById(id);
       }
       return of(null);
     })
@@ -36,12 +37,18 @@ export class ShowDetailsContainerComponent{
       const id: string | null = paramMap.get("id");
       if (id)
       {
-        return this.ReviewService.listReviews(id);
+        return this.reviewService.listReviews(id);
       }
       else{
         return of(null);
       }
     })
   );
+
+  public onReviewAdd(reviewData: IReview): void{
+    console.log(reviewData);
+    this.reviewService.onReviewAdd(reviewData).subscribe();
+
+  }
 
   }

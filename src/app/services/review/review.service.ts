@@ -12,18 +12,20 @@ import { Review } from './review.model';
 export class ReviewService {
 
   constructor (private http: HttpClient){};
+
   public listReviews(show_id: string): Observable<Array<Review> | null>{
     return this.http.get<{reviews: Array<IReview>}>(`https://tv-shows.infinum.academy/shows/${show_id}/reviews`).pipe(
       map(({reviews} : {reviews: Array<IReview>}) =>{
         return reviews.map((reviewData: IReview) => new Review (reviewData));
       }),
-      );
-  }
+      ); }
 
-  public createReview(reviewData:IReview): Observable<any>{
-    return this.http.post<HttpResponse<any>>('https://tv-shows.infinum.academy/reviews', reviewData, {observe: 'response'})
+  public onReviewAdd(reviewData:IReview): Observable<IReview>{
+    return of(reviewData);
+    // return this.http.post<HttpResponse<any>>('https://tv-shows.infinum.academy/reviews', reviewData, {observe: 'response'})
     
   }
+
 };
 
 
