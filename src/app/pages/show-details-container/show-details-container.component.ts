@@ -36,7 +36,7 @@ export class ShowDetailsContainerComponent{
       const id: string | null = paramMap.get("id");
       if (id)
       {
-        return this.ReviewService.getByShowId(id);
+        return this.ReviewService.listReviews(id);
       }
       else{
         return of(null);

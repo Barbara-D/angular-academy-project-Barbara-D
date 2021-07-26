@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { of, throwError } from 'rxjs';
-import {delay, map, retry} from "rxjs/internal/operators";
+import { map } from "rxjs/internal/operators";
 import { Observable } from 'rxjs';
 import { IRawShow } from '../../interfaces/rawShow.interface';
 import { Show } from './show.model'; 
@@ -10,7 +9,38 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ShowService {
-  // private rawData: Array<IRawShow> = [
+  constructor (private http: HttpClient){};
+  public getShows(): Observable<Array<Show>> {
+    return this.http.get<{shows: Array<IRawShow>}>('https://tv-shows.infinum.academy/shows').pipe(
+      map(({shows} : {shows: Array<IRawShow>}) =>{
+        return shows.map((rawShowData: IRawShow) => new Show (rawShowData));
+      }),
+      );
+  }
+  public getTopRated (): Observable<Array<Show>>{
+    return this.http.get<{shows: Array<IRawShow>}>('https://tv-shows.infinum.academy/shows/top_rated').pipe(
+      map(({shows} : {shows: Array<IRawShow>}) =>{
+        return shows.map((rawShowData: IRawShow) => new Show (rawShowData));
+      }),
+    );  
+  };
+
+
+
+  public getById (id: string): Observable<Show | null> { 
+    return this.http.get<{show: IRawShow}>(`https://tv-shows.infinum.academy/shows/${id}`).pipe(
+      map(({show} : {show: IRawShow}) =>{
+        return new Show (show);
+      }),
+      );
+    // return this.getShows().pipe(
+    //   map((shows) => shows.find((show : Show) => show.id === id) || null));
+    // return this.shows.find((show: Show) => show.id === id);
+  }
+}
+
+
+ // private rawData: Array<IRawShow> = [
   //   {
   //     id: "1",
   //     title: "Black Mirror",
@@ -56,24 +86,6 @@ export class ShowService {
   //   },    
   // ];
 
-  constructor (private http: HttpClient){};
-
-  public getShows(): Observable<Array<Show>> {
-    return this.http.get<{shows: Array<IRawShow>}>('https://tv-shows.infinum.academy/shows').pipe(
-      map(({shows} : {shows: Array<IRawShow>}) =>{
-        return shows.map((rawShowData: IRawShow) => new Show (rawShowData));
-      }),
-      );
-  }
-  public getTopRated (): Observable<Array<Show>>{
-    return this.http.get<{shows: Array<IRawShow>}>('https://tv-shows.infinum.academy/shows/top_rated').pipe(
-      map(({shows} : {shows: Array<IRawShow>}) =>{
-        return shows.map((rawShowData: IRawShow) => new Show (rawShowData));
-      }),
-    );  
-  };
-
-
     // return this.http.get<{ body: {shows: Array<IRawShow>} }>('https://tv-shows.infinum.academy/shows').pipe(
     //   map((response) => {
     //     return response.body.shows.map((rawShowData: IRawShow) => new Show(rawShowData));
@@ -97,11 +109,3 @@ export class ShowService {
   //   return this.getShows().pipe(
   //     map((shows) => shows.filter((show: Show) => show.averageRating >= 4)));
   // };
-
-  public getById (id: string): Observable<Show | null> { 
-    return this.getShows().pipe(
-      map((shows) => shows.find((show : Show) => show.id === id) || null));
-    // return this.shows.find((show: Show) => show.id === id);
-  }
-}
-

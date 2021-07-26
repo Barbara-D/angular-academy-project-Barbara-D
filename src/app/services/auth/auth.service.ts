@@ -23,10 +23,21 @@ export class AuthService {
   //   return this.http.get<Array<Auth>>('https://tv-shows.infinum.academy/users');
   // }
 
-  public onAccountAdd(authData:IRegisterFormData): Observable<IRegisterFormData>{
+  public onRegister(authData:IRegisterFormData): Observable<any>{
     // console.log(authData);
     // return of(authData);
-    return this.http.post<IRegisterFormData>('https://tv-shows.infinum.academy/users', authData);
+    return this.http.post<HttpResponse<any>>('https://tv-shows.infinum.academy/users', authData, {observe: 'response'}).pipe(
+      tap((response: HttpResponse<any>) => {
+        const uid: string | null= response.headers.get('uid');
+        const access : string | null = response.headers.get('access-token');
+        const client: string | null = response.headers.get('client');
+  
+        if ( uid && access && client){
+          this.saveAuthData({uid, 'access-token': access, client});
+          this._isLoggedIn$.next(true);
+        }
+      })
+      );;
   }
 
   public onLogin(loginData:IAccount): Observable<any> {
