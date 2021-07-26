@@ -1,7 +1,6 @@
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { of } from 'rxjs/internal/observable/of';
 import { map } from 'rxjs/internal/operators';
 import { IReview } from 'src/app/interfaces/review.interface';
 import { Review } from './review.model';
@@ -21,9 +20,7 @@ export class ReviewService {
       ); }
 
   public onReviewAdd(reviewData:IReview): Observable<IReview>{
-    return of(reviewData);
-    // return this.http.post<HttpResponse<any>>('https://tv-shows.infinum.academy/reviews', reviewData, {observe: 'response'})
-    
+    return this.http.post<IReview>('https://tv-shows.infinum.academy/reviews', reviewData)
   }
 
 };

@@ -46,6 +46,8 @@ export class ShowDetailsContainerComponent{
   );
 
   public onReviewAdd(reviewData: IReview): void{
+    
+
     console.log(reviewData);
     this.reviewService.onReviewAdd(reviewData).subscribe();
 
