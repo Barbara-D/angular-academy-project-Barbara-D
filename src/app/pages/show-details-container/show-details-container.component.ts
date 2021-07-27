@@ -3,8 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { Show } from 'src/app/services/show/show.model';
 import { ShowService } from 'src/app/services/show/show.service';
 import { ReviewService } from 'src/app/services/review/review.service';
-import { Observable } from 'rxjs';
-import { switchMap } from 'rxjs/internal/operators';
+import { Subject, Observable } from 'rxjs';
+import { map, switchMap } from 'rxjs/internal/operators';
 import { of } from 'rxjs/internal/observable/of';
 import { Review } from 'src/app/services/review/review.model';
 import { IReview } from 'src/app/interfaces/review.interface';
@@ -20,12 +20,16 @@ export class ShowDetailsContainerComponent{
   public constructor(private route:ActivatedRoute, private showService:ShowService, private reviewService:ReviewService) { }
 
   // public show: Show | undefined;
+  public show_id$: Subject<string> = new Subject<string>();
+  public show_id: string;
 
   public show$: Observable <Show | null> = this.route.paramMap.pipe(
     switchMap((paramMap) => {
       const id: string | null = paramMap.get("id");
       if (id)
       {
+        // this.show_id$.next(id);
+        this.show_id = id;
         return this.showService.getById(id);
       }
       return of(null);
@@ -45,12 +49,18 @@ export class ShowDetailsContainerComponent{
     })
   );
 
-  public onReviewAdd(reviewData: IReview): void{
+  public onReviewAdd(reviewData: IReview, show_id$: Subject<string>): void{
     
+    reviewData.show_id=this.show_id;
 
-    console.log(reviewData);
+    //     show_id$.pipe(map((show_id: string) => {
+    //       if(show_id){
+    //         reviewData.show_id=show_id;
+    //         console.log(show_id);
+    //       }
+    //       console.log("error")
+    //     }));
+    // console.log(reviewData);
     this.reviewService.onReviewAdd(reviewData).subscribe();
 
-  }
-
-  }
+  }}

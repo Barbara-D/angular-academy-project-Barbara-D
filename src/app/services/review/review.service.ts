@@ -1,7 +1,8 @@
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { map } from 'rxjs/internal/operators';
+import { IReviewData } from 'src/app/interfaces/review-data.interface';
 import { IReview } from 'src/app/interfaces/review.interface';
 import { Review } from './review.model';
 
@@ -19,8 +20,9 @@ export class ReviewService {
       }),
       ); }
 
-  public onReviewAdd(reviewData:IReview): Observable<IReview>{
-    return this.http.post<IReview>('https://tv-shows.infinum.academy/reviews', reviewData)
+  public onReviewAdd(reviewData:IReviewData): Observable<IReviewData>{
+    console.log(reviewData);
+    return this.http.post<IReviewData>('https://tv-shows.infinum.academy/reviews', reviewData)
   }
 
 };
