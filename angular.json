@@ -35,6 +35,9 @@
               "src/app/styles/themes/purple-rain.scss",
               "src/app/styles/themes/main.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": ["src/app/styles"]
+            },
             "scripts": []
           },
           "configurations": {
