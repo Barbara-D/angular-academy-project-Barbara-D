@@ -20,7 +20,7 @@ export class ShowDetailsContainerComponent{
   public constructor(private route:ActivatedRoute, private showService:ShowService, private reviewService:ReviewService) { }
 
   // public show: Show | undefined;
-  public show_id$: Subject<string> = new Subject<string>();
+  // public show_id$: Subject<string> = new Subject<string>();
   public show_id: string;
 
   public show$: Observable <Show | null> = this.route.paramMap.pipe(
@@ -49,7 +49,7 @@ export class ShowDetailsContainerComponent{
     })
   );
 
-  public onReviewAdd(reviewData: IReview, show_id$: Subject<string>): void{
+  public onReviewAdd(reviewData: IReview): void{
     
     reviewData.show_id=this.show_id;
 
