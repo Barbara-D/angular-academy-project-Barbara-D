@@ -25,10 +25,10 @@ public links: Array<ILink> = [
     title: "My profile",
   },
 
-  {
-    url: "/register",
-    title: "Register",
-  },
+  // {
+  //   url: "/register",
+  //   title: "Register",
+  // },
 ];
 public logOut(): void{
   this.authService.logOut();

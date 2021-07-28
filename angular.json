@@ -33,7 +33,7 @@
             ],
             "styles": [
               "src/app/styles/themes/purple-rain.scss",
-              "src/styles.scss"
+              "src/app/styles/themes/main.scss"
             ],
             "scripts": []
           },
@@ -102,7 +102,7 @@
             ],
             "styles": [
               "src/app/styles/themes/purple-rain.scss",
-              "src/styles.scss"
+              "src/app/styles/themes/main.scss"
             ],
             "scripts": []
           }
