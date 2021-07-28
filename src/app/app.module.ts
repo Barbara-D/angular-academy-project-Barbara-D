@@ -33,9 +33,10 @@ import { RegisterContainerComponent } from './pages/register-container/register-
 import { RegisterFormComponent } from './pages/register-container/components/register-form/register-form.component';
 import { LoginContainerComponent } from './pages/login-container/login-container.component';
 import { LoginFormComponent } from './pages/login-container/components/login-form/login-form.component';
-import { HttpClientModule } from '@angular/common/http';
-
-
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { AuthErrorInterceptor } from './interceptors/auth-error.interceptor';
+import { ReviewWriteComponent } from './pages/show-details-container/components/review-write/review-write.component';
 @NgModule({
 	declarations: [
 			AllShowsContainerComponent,
@@ -57,6 +58,7 @@ import { HttpClientModule } from '@angular/common/http';
 			TopRatedContainerComponent,
    LoginContainerComponent,
    LoginFormComponent,
+   ReviewWriteComponent,
 		],
 
 	imports: [
@@ -75,7 +77,18 @@ import { HttpClientModule } from '@angular/common/http';
 		 MatSnackBarModule
 	],
 
-	providers: [],
+	providers: [
+		{
+			provide: HTTP_INTERCEPTORS,
+			useClass: AuthInterceptor,
+			multi: true,
+		},
+		{
+			provide: HTTP_INTERCEPTORS,
+			useClass: AuthErrorInterceptor,
+			multi: true,
+		},
+	],
 	bootstrap: [AppComponent],
 })
 export class AppModule {}

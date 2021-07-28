@@ -1,0 +1,18 @@
+.write-card{
+	width:80%;
+	max-width: 500px;
+	margin: 0 auto;
+	margin-top: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	color: #292929;
+}
+form{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+button{
+	 margin-top: 12px;
+}

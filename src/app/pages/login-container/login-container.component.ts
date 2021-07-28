@@ -29,14 +29,14 @@ export class LoginContainerComponent {
         return throwError(err);
     })
     )
-    .subscribe((account:IAccount) =>
+    .subscribe(() =>
     {
       this.router.navigate(['']);
-      console.log(account);
-      //log errors
     });
 
 }  
 private openSnackBar(message: string, action: string) {
-  this._snackBar.open(message, action);
+  this._snackBar.open(message, action, {
+    duration: 5000
+  });
 }}

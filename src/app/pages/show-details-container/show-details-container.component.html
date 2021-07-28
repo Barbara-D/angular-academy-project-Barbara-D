@@ -1,6 +1,7 @@
 <ng-container *ngIf = "(show$ | async) as show; else loading">
 	<app-show-details [show] = "show"></app-show-details>
 
+	<app-review-write (addReview)="onReviewAdd($event)" ></app-review-write>
 	<ng-container *ngIf = "(reviews$ | async) as reviews">
 		<app-review-list [reviews] = "reviews"></app-review-list>
 	</ng-container>

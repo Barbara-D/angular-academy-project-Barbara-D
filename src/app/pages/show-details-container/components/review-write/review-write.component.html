@@ -1,0 +1,39 @@
+<mat-card class="write-card">
+	<h2>Write a review</h2>
+	<form [formGroup] = "reviewFormGroup">
+		<mat-form-field appearance="outline">
+			<mat-label>Comment</mat-label>
+
+			
+ 		 <textarea matInput required
+			placeholder="Your thoughts on this show..."
+			formControlName="comment"></textarea>
+			<mat-error>Comment is required</mat-error>
+			<!-- <input type="text" 
+				matInput required
+				placeholder="Your thoughts on this show..."
+				formControlName="comment"> -->
+				<!-- <mat-icon matSuffix>edit</mat-icon> -->
+		</mat-form-field>
+
+			
+			<mat-form-field appearance="outline">
+			<mat-label>Rating</mat-label>
+			<input type="number" 
+				matInput required
+				formControlName="rating">
+			<mat-icon matSuffix>star</mat-icon>
+			<mat-error>Rating is required</mat-error>
+		</mat-form-field>
+
+	<button 
+		mat-raised-button color="primary"
+		(click) = "onSubmit()"
+		[disabled] = "reviewFormGroup.invalid"
+		>Submit</button>
+
+	</form>
+
+
+
+</mat-card>

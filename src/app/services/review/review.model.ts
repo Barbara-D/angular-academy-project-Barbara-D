@@ -5,12 +5,12 @@ export class Review {
 		this.id = rawReviewData.id;
 		this.rating = rawReviewData.rating;
 		this.comment = rawReviewData.comment;
-		this.showId = rawReviewData.showId;
+		this.show_id = rawReviewData.show_id;
 	}
 
 	public id : string;
 	public rating : number;
 	public comment: string;
-	public showId: string;
+	public show_id: string;
 }
 
