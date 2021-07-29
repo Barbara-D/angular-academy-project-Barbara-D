@@ -9,7 +9,7 @@ import {MatInputModule} from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
-
+import {LayoutModule} from '@angular/cdk/layout';
 
 
 import { AppComponent } from './app.component';
@@ -76,7 +76,8 @@ import { LogoComponent } from './components/logo/logo.component';
 		 ReactiveFormsModule,
 		 MatButtonModule,
 		 HttpClientModule,
-		 MatSnackBarModule
+		 MatSnackBarModule,
+		 LayoutModule,
 	],
 
 	providers: [

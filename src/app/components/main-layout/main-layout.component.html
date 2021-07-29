@@ -1,13 +1,30 @@
-<mat-drawer-container class="main-layout-drawer">
-  <mat-drawer mode="over" position="end" #drawer>
-		<button mat-icon-button (click)="drawer.close()"><mat-icon>close</mat-icon></button>
-		<app-sidenav></app-sidenav>
-	</mat-drawer>
-  <mat-drawer-content class="content">
-		<header class="header">
-			<app-logo></app-logo>
-			<button mat-icon-button (click)="drawer.open()"><mat-icon>menu</mat-icon></button>
-		</header>
-		<router-outlet></router-outlet>
-	</mat-drawer-content>
-</mat-drawer-container>
+<ng-container *ngIf="layout$ | async as layout">
+	<mat-drawer-container class="main-layout-drawer">
+
+		<mat-drawer #drawer class="side-drawer"
+		[mode]="layout.isSmall? 'over' : 'side'" 
+		[position]="layout.isSmall? 'end' : 'start'"
+		[opened]="!layout.isSmall">
+
+		<div class="wrapper">
+			<app-logo *ngIf="!layout.isSmall" class="logo"></app-logo>
+
+			<button *ngIf="layout.isSmall" mat-icon-button class="close" (click)="drawer.close()"><mat-icon>close</mat-icon></button>
+			<app-sidenav class="sidenav"></app-sidenav>
+			
+			<button mat-button color="primary" class="logout" (click)="logOut()">Log out</button>
+		</div>
+	
+		</mat-drawer>
+		<mat-drawer-content class="content">
+			<header *ngIf="layout.isSmall" class="header">
+				<app-logo></app-logo>
+				<button mat-icon-button (click)="drawer.open()"><mat-icon>menu</mat-icon></button>
+			</header>
+			<router-outlet></router-outlet>
+		</mat-drawer-content>
+	</mat-drawer-container>
+</ng-container>
+
+
+ 

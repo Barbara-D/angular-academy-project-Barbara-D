@@ -12,3 +12,26 @@
 	margin-bottom: 32px;
 }
 
+.side-drawer{
+	 padding: 32px 32px 56px;
+}
+
+.sidenav{
+	flex:1;
+}
+
+.wrapper{
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+} 
+
+.logout{
+	margin-top: auto;
+	width: 50%;
+
+}
+
+.close{
+	margin-bottom: 40px;
+}
