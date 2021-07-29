@@ -37,6 +37,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { AuthErrorInterceptor } from './interceptors/auth-error.interceptor';
 import { ReviewWriteComponent } from './pages/show-details-container/components/review-write/review-write.component';
+import { LogoComponent } from './components/logo/logo.component';
 @NgModule({
 	declarations: [
 			AllShowsContainerComponent,
@@ -59,6 +60,7 @@ import { ReviewWriteComponent } from './pages/show-details-container/components/
    LoginContainerComponent,
    LoginFormComponent,
    ReviewWriteComponent,
+   LogoComponent,
 		],
 
 	imports: [

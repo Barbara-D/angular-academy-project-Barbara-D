@@ -1,8 +1,13 @@
 <mat-drawer-container class="main-layout-drawer">
-  <mat-drawer mode="side" opened>
+  <mat-drawer mode="over" position="end" #drawer>
+		<button mat-icon-button (click)="drawer.close()"><mat-icon>close</mat-icon></button>
 		<app-sidenav></app-sidenav>
 	</mat-drawer>
-  <mat-drawer-content>
+  <mat-drawer-content class="content">
+		<header class="header">
+			<app-logo></app-logo>
+			<button mat-icon-button (click)="drawer.open()"><mat-icon>menu</mat-icon></button>
+		</header>
 		<router-outlet></router-outlet>
 	</mat-drawer-content>
 </mat-drawer-container>
