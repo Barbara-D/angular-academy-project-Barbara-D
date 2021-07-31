@@ -1,4 +1,5 @@
 <mat-card class="login-card">
+	<div class="login-content">
 	<app-logo class="logo"></app-logo>
 	<form [formGroup] = "loginFormGroup" class="login-form">
 		<mat-form-field appearance="outline">
@@ -27,4 +28,5 @@
 		>LOG IN</button>
 	</form>
 	<p class="other-form mat-small">Don't have an account? <a routerLink="/register">Register</a></p>
+</div>
 </mat-card>

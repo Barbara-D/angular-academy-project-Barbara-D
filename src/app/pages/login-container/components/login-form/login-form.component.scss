@@ -49,3 +49,17 @@ form{
 	width: auto;
 	margin: 20px auto;
 }
+
+@media (max-width: 960px) {
+	:host{		
+	background-color: colors.$purple;
+	} 
+	.login-card{
+		visibility: hidden;
+		width: 100%;
+	}
+	.login-content{
+		visibility: visible;
+	}
+
+}

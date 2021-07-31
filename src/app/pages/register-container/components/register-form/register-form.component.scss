@@ -46,3 +46,18 @@ form{
 	width: auto;
 	margin: 20px auto;
 }
+
+
+@media (max-width: 960px) {
+	:host{		
+	background-color: colors.$purple;
+	} 
+	.register-card{
+		visibility: hidden;
+		width: 100%;
+	}
+	.register-content{
+		visibility: visible;
+	}
+
+}
