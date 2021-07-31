@@ -13,7 +13,7 @@ export class ReviewService {
 
   constructor (private http: HttpClient){};
 
-  public listReviews(show_id: string): Observable<Array<Review> | null>{
+  public listReviews(show_id: string): Observable<Array<Review>>{
     return this.http.get<{reviews: Array<IReview>}>(`https://tv-shows.infinum.academy/shows/${show_id}/reviews`).pipe(
       map(({reviews} : {reviews: Array<IReview>}) =>{
         return reviews.map((reviewData: IReview) => new Review (reviewData));
