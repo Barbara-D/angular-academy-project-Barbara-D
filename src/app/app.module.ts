@@ -38,6 +38,7 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { AuthErrorInterceptor } from './interceptors/auth-error.interceptor';
 import { ReviewWriteComponent } from './pages/show-details-container/components/review-write/review-write.component';
 import { LogoComponent } from './components/logo/logo.component';
+import { EmptyImgComponent } from './components/empty-img/empty-img.component';
 @NgModule({
 	declarations: [
 			AllShowsContainerComponent,
@@ -61,6 +62,7 @@ import { LogoComponent } from './components/logo/logo.component';
    LoginFormComponent,
    ReviewWriteComponent,
    LogoComponent,
+   EmptyImgComponent,
 		],
 
 	imports: [

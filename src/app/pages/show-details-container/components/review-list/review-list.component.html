@@ -3,7 +3,8 @@
 		<ng-container *ngFor = "let review of reviews">
 			<app-review class="review-list"
 				[comment]="review.comment"
-				[rating]="review.rating">
+				[rating]="review.rating"
+				[user]="review.user">
 			</app-review>
 		</ng-container>
 	</ng-container>

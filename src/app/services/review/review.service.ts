@@ -1,6 +1,6 @@
-import { HttpClient, HttpResponse } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
+import { Observable } from 'rxjs';
 import { map } from 'rxjs/internal/operators';
 import { IReviewData } from 'src/app/interfaces/review-data.interface';
 import { IReview } from 'src/app/interfaces/review.interface';

@@ -5,6 +5,7 @@ import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 import { tap } from 'rxjs/internal/operators';
 import { IAccount } from 'src/app/interfaces/account.interface';
 import { IAuthData } from 'src/app/interfaces/auth-data.interface';
+import { Iuser } from 'src/app/interfaces/user';
 import { IRegisterFormData } from 'src/app/pages/register-container/components/register-form/register-form.component';
 import { StorageService } from '../storage.service';
 
@@ -68,7 +69,7 @@ export class AuthService {
   public logOut(): void{
     this.storage.remove(this.authDataKey);
     this._isLoggedIn$.next(false);
-
   }
 
 }
+
