@@ -1,7 +1,10 @@
+@use 'utils/colors';
+
 :host{
 	display: block;
 	width: 100%;
 	height: 100%;
+	text-decoration: none;
 }
 
 .show-card{
@@ -12,6 +15,7 @@
 	height: 100%;
 	display: flex;
 	flex-direction: column;
+	background-color: colors.$white;
 }
 
 .image{
@@ -26,4 +30,19 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	color: colors.$purple;
+}
+
+h3:link, h3:active, h3:visited, h3:hover{
+	text-decoration: none;
+}
+
+@media (max-width: 960px) {
+	.show-card-text{
+		flex-direction: row;
+		padding-bottom: 0;
+	}
+	.show-card{
+		border-radius: 16px;
+	}
 }
