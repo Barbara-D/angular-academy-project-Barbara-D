@@ -1,3 +1,7 @@
+@use 'utils/colors';
+.logo {
+	margin-bottom: 80px;
+}
 .main-layout-drawer{
 	height: 100%;
 }
@@ -28,10 +32,27 @@
 
 .logout{
 	margin-top: auto;
-	width: 50%;
-
+	width: auto;
+	align-self: flex-start;
 }
 
-.close{
-	margin-bottom: 40px;
+
+
+@media (max-width: 960px) {
+	.side-drawer{
+		width: 90%;
+		border-top-left-radius: 30px;
+		margin-top: 20px;
+		background-color: colors.$purple;
+	}
+	.close{
+		margin-bottom: 40px;
+		align-self: flex-end;
+	}
+	.sidenav{
+		font-size: 1.5em;
+	}
+	.logout{
+		font-size: 1.25em;
+	}
 }

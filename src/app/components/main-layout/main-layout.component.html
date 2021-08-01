@@ -9,7 +9,7 @@
 		<div class="wrapper">
 			<app-logo *ngIf="!layout.isSmall" class="logo"></app-logo>
 
-			<button *ngIf="layout.isSmall" mat-icon-button class="close" (click)="drawer.close()"><mat-icon>close</mat-icon></button>
+			<button *ngIf="layout.isSmall" mat-icon-button class="close" (click)="drawer.close()"><mat-icon>highlight_off</mat-icon></button>
 			<app-sidenav class="sidenav"></app-sidenav>
 			
 			<button mat-button color="primary" class="logout" (click)="logOut()">Log out</button>
