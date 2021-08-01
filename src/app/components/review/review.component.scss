@@ -1,16 +1,17 @@
+@use 'utils/colors';
+
 .review-card{
 	width:80%;
-	max-width: 500px;
-	margin: 0 auto;
-	margin-top: 10px;
+	margin-top: 20px;
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-end;
-	background-color: #292929;
-	color: #e1e1e1;
+	background-color: colors.$purple;
+	color: colors.$white;
+	border-radius: 24px;
+	padding: 32px;
 }
-
-.review-card div {
-	font-style: italic;
-	padding-right: 20px;
+.review-card div{
+	flex-grow: 2;
+	padding-left: 20px;
 }

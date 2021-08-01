@@ -11,10 +11,9 @@
 }
 .reviews-title{
 	font-weight: lighter;
-	margin-right: 50px;
 }
 form{
-	width: 100%;
+	width: 80%;
 	display: flex;
 	flex-direction: column;
 }
@@ -22,6 +21,13 @@ button{
 	 margin-top: 12px;
 }
 .commment{
-	background-color: white;
-	color: black;
+	background-color: colors.$white;
+	color: colors.$black;
+	width: 100%;
+	padding: 20px;
+}
+.rating-button{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
 }
