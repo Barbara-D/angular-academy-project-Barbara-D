@@ -1,12 +1,17 @@
+@use 'utils/colors';
+
 .write-card{
-	width:80%;
-	max-width: 500px;
+	width:100%;
 	margin: 0 auto;
-	margin-top: 10px;
+	margin-top: 60px;
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 	justify-content: space-between;
-	color: #292929;
+	color: colors.$white;
+}
+.reviews-title{
+	font-weight: lighter;
+	margin-right: 50px;
 }
 form{
 	width: 100%;
@@ -15,4 +20,8 @@ form{
 }
 button{
 	 margin-top: 12px;
+}
+.commment{
+	background-color: white;
+	color: black;
 }
