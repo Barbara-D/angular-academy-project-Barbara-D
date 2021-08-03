@@ -19,7 +19,7 @@ public links: Array<ILink> = [
     title: "Top rated",
   },
   {
-    url: "#",
+    url: "/profile",
     title: "My profile",
   },
 

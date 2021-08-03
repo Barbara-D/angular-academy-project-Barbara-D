@@ -39,6 +39,8 @@ import { AuthErrorInterceptor } from './interceptors/auth-error.interceptor';
 import { ReviewWriteComponent } from './pages/show-details-container/components/review-write/review-write.component';
 import { LogoComponent } from './components/logo/logo.component';
 import { EmptyImgComponent } from './components/empty-img/empty-img.component';
+import { ProfileContainerComponent } from './pages/profile-container/profile-container.component';
+import { ProfileComponent } from './pages/profile-container/components/profile/profile.component';
 @NgModule({
 	declarations: [
 			AllShowsContainerComponent,
@@ -63,6 +65,8 @@ import { EmptyImgComponent } from './components/empty-img/empty-img.component';
    ReviewWriteComponent,
    LogoComponent,
    EmptyImgComponent,
+   ProfileContainerComponent,
+   ProfileComponent,
 		],
 
 	imports: [
