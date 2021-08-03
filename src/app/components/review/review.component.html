@@ -1,7 +1,9 @@
 <mat-card class="review-card">
-
+	<div class="user">
 	<ng-container *ngIf = "(user.image_url); else empty">
-		<img [src]="user.image_url" class="profile-pic">
+		<div>
+			<img [src]="user.image_url" class="profile-pic">
+		</div>
 	</ng-container>
 
 	<ng-template #empty>
@@ -17,7 +19,7 @@
 		</ng-container>
 	</div>
 	</div>
-
+</div>
 
 	<!-- <app-rating [averageRating] = "rating" ></app-rating> -->
 

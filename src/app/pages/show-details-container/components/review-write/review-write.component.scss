@@ -31,3 +31,14 @@ button{
 	flex-direction: row;
 	justify-content: space-between;
 }
+
+@media (max-width: 960px) {
+	.write-card{
+		flex-direction: column;
+	}
+	form{
+			width: 100%;
+		}
+
+
+}

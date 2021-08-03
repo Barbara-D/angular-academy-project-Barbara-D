@@ -24,7 +24,16 @@
 	color: colors.$purple;
 }
 
-.show-details p{
+.description{
 	flex-basis: 65%;
 	padding-left:10px;
+}
+
+@media (max-width: 960px) {
+.show-details{
+	flex-direction: column;
+}
+.description{
+	padding-top: 18px;
+}
 }
