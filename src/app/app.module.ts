@@ -41,6 +41,7 @@ import { LogoComponent } from './components/logo/logo.component';
 import { EmptyImgComponent } from './components/empty-img/empty-img.component';
 import { ProfileContainerComponent } from './pages/profile-container/profile-container.component';
 import { ProfileComponent } from './pages/profile-container/components/profile/profile.component';
+import { ProfilePlaceholderComponent } from './components/profile-placeholder/profile-placeholder.component';
 @NgModule({
 	declarations: [
 			AllShowsContainerComponent,
@@ -67,6 +68,7 @@ import { ProfileComponent } from './pages/profile-container/components/profile/p
    EmptyImgComponent,
    ProfileContainerComponent,
    ProfileComponent,
+   ProfilePlaceholderComponent,
 		],
 
 	imports: [

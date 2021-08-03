@@ -1,6 +1,42 @@
-.text{
+@use 'utils/colors';
+
+:host{
 	width: 100%;
-	margin: 0 auto;
+	height: 100%;
 	display: flex;
 	flex-direction: column;
+
+}
+.container{
+	margin: auto;
+	width: 60%;
+}
+
+.text{
+	text-align: center;
+	padding-bottom: 32px;
+}
+
+.image-container{
+	padding: 60px 0;
+	width: 100%;
+	border: 2px dashed colors.$purple;
+	text-align: center;
+	border-radius: 24px;
+	background-color: colors.$light-purple-alpha;
+}
+.drop-text{
+	padding-top: 8px;
+	color: colors.$light-purple;
+	font-weight: 500;
+}
+.email-title{
+	font-size: 0.8em;
+}
+
+@media (max-width: 960px){
+	.container {
+		width: 80%;
+	}
+
 }

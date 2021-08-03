@@ -1,5 +1,5 @@
 import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
-import { Iuser } from 'src/app/interfaces/user';
+import { Iuser } from 'src/app/interfaces/user.interface';
 
 @Component({
   selector: 'app-review',

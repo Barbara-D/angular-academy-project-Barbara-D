@@ -1,4 +1,5 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
+import { User } from 'src/app/services/user.model';
 
 @Component({
   selector: 'app-profile',
@@ -13,4 +14,5 @@ export class ProfileComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  @Input() user: User;
 }

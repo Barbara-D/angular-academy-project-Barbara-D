@@ -42,7 +42,8 @@
 .user{
 	display: flex;
 	flex-direction: row;
-	width:40%;
+	width:40%; 
+	overflow: hidden;
 }
 
 @media (max-width: 960px) {
