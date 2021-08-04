@@ -1,6 +1,29 @@
 <mat-card class="review-card">
-	<div> {{comment}} </div>
-	<app-rating [averageRating] = "rating" ></app-rating>
+	<div class="user">
+	<ng-container *ngIf = "(user.image_url); else empty">
+		<div>
+			<img [src]="user.image_url" class="profile-pic">
+		</div>
+	</ng-container>
+
+	<ng-template #empty>
+		<app-empty-img></app-empty-img>
+	</ng-template>
+	
+	<div class="email-rating">	
+		<div>{{user.email}}</div>
+		<div class= "rating">
+		<div>{{rating}}/5</div>
+		<ng-container *ngFor="let i of [].constructor(rating)">
+			<mat-icon class="star">star</mat-icon>
+		</ng-container>
+	</div>
+	</div>
+</div>
+
+	<!-- <app-rating [averageRating] = "rating" ></app-rating> -->
+
+	<div class="comment"> {{comment}} </div>
 
 	<!-- <img [src]="imageUrl">
 	<div class="show-card-text">

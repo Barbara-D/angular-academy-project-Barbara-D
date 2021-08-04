@@ -1,6 +1,7 @@
-<mat-card class="login-form">
-	<h2>Login</h2>
-	<form [formGroup] = "loginFormGroup">
+<mat-card class="login-card">
+	<div class="login-content">
+	<app-logo class="logo"></app-logo>
+	<form [formGroup] = "loginFormGroup" class="login-form">
 		<mat-form-field appearance="outline">
 			<mat-label>Email address</mat-label>
 			<input type="email" 
@@ -18,14 +19,14 @@
 				matInput required
 				formControlName="password">
 			<mat-icon matPrefix>lock</mat-icon>
-			<mat-hint>At least 8 characters long</mat-hint>
 		</mat-form-field>
 
-	<button 
-		mat-raised-button color="primary"
+	<button mat-raised-button color="primary"
+	class="button"
 		(click) = "onLogin()"
 		[disabled] = "loginFormGroup.invalid"
-		>Login</button>
+		>LOG IN</button>
 	</form>
-	<p class="other-form">Don't have an account? <a routerLink="/register">Register</a></p>
+	<p class="other-form mat-small">Don't have an account? <a routerLink="/register">Register</a></p>
+</div>
 </mat-card>

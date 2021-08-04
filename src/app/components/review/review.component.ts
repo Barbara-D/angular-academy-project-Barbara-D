@@ -1,4 +1,5 @@
 import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
+import { Iuser } from 'src/app/interfaces/user.interface';
 
 @Component({
   selector: 'app-review',
@@ -9,5 +10,6 @@ import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 export class ReviewComponent{
   @Input() comment: string;
   @Input() rating: number;
+  @Input() user: any;
 
 }

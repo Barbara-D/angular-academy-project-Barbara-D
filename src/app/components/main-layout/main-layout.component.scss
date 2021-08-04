@@ -1,3 +1,58 @@
+@use 'utils/colors';
+.logo {
+	margin-bottom: 80px;
+}
 .main-layout-drawer{
 	height: 100%;
+}
+
+.content{
+	padding:32px;
+}
+
+.header{
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 32px;
+}
+
+.side-drawer{
+	 padding: 32px 32px 56px;
+}
+
+.sidenav{
+	flex:1;
+}
+
+.wrapper{
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+} 
+
+.logout{
+	margin-top: auto;
+	width: auto;
+	align-self: flex-start;
+}
+
+
+
+@media (max-width: 960px) {
+	.side-drawer{
+		width: 90%;
+		border-top-left-radius: 30px;
+		margin-top: 20px;
+		background-color: colors.$purple;
+	}
+	.close{
+		margin-bottom: 40px;
+		align-self: flex-end;
+	}
+	.sidenav{
+		font-size: 1.5em;
+	}
+	.logout{
+		font-size: 1.25em;
+	}
 }

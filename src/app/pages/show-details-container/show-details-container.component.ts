@@ -3,11 +3,15 @@ import { ActivatedRoute } from '@angular/router';
 import { Show } from 'src/app/services/show/show.model';
 import { ShowService } from 'src/app/services/show/show.service';
 import { ReviewService } from 'src/app/services/review/review.service';
-import { Subject, Observable } from 'rxjs';
+import { Subject, Observable, combineLatest } from 'rxjs';
 import { map, switchMap } from 'rxjs/internal/operators';
-import { of } from 'rxjs/internal/observable/of';
 import { Review } from 'src/app/services/review/review.model';
-import { IReview } from 'src/app/interfaces/review.interface';
+import { throwError } from 'rxjs/internal/observable/throwError';
+
+interface ITemplateData{
+  show: Show;
+  reviews: Array<Review>;
+}
 
 @Component({
   selector: 'app-show-details-container',
@@ -20,47 +24,36 @@ export class ShowDetailsContainerComponent{
   public constructor(private route:ActivatedRoute, private showService:ShowService, private reviewService:ReviewService) { }
 
   // public show: Show | undefined;
-  // public show_id$: Subject<string> = new Subject<string>();
+  public trigger$: Subject<null> = new Subject<null>();
   public show_id: string;
 
-  public show$: Observable <Show | null> = this.route.paramMap.pipe(
-    switchMap((paramMap) => {
-      const id: string | null = paramMap.get("id");
-      if (id)
-      {
-        // this.show_id$.next(id);
-        this.show_id = id;
-        return this.showService.getById(id);
+  public templateData$: Observable<ITemplateData> =  this.route.paramMap.pipe(
+    switchMap(() =>{
+      const id: string | null= this.route.snapshot.paramMap.get('id');
+      if (!id) {
+        return throwError('noId');
       }
-      return of(null);
-    })
-  );
+      return combineLatest([this.showService.getById(id), this.reviewService.listReviews(id)])
+    }
+    ),
+    map(([show, reviews]) => {
+      return {show, reviews};
 
-  public reviews$: Observable <Array<Review> | null> = this.route.paramMap.pipe(
-    switchMap((paramMap) => {
-      const id: string | null = paramMap.get("id");
-      if (id)
-      {
-        return this.reviewService.listReviews(id);
-      }
-      else{
-        return of(null);
-      }
-    })
-  );
+    }) 
+  )
 
-  public onReviewAdd(reviewData: IReview): void{
+  //turn into a new inteface
+  public onReviewAdd(reviewData: {comment: string, rating: number}): void{
+    const showId: string | null = this.route.snapshot.paramMap.get('id');
     
-    reviewData.show_id=this.show_id;
-
-    //     show_id$.pipe(map((show_id: string) => {
-    //       if(show_id){
-    //         reviewData.show_id=show_id;
-    //         console.log(show_id);
-    //       }
-    //       console.log("error")
-    //     }));
-    // console.log(reviewData);
-    this.reviewService.onReviewAdd(reviewData).subscribe();
+    if (showId){
+      this.reviewService.onReviewAdd({
+        comment:reviewData.comment,
+        rating: reviewData.rating,
+        show_id: showId,
+      }).subscribe(() => {
+        this.trigger$.next();
+      });
+    }
 
   }}

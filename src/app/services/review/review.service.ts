@@ -1,6 +1,6 @@
-import { HttpClient, HttpResponse } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
+import { Observable } from 'rxjs';
 import { map } from 'rxjs/internal/operators';
 import { IReviewData } from 'src/app/interfaces/review-data.interface';
 import { IReview } from 'src/app/interfaces/review.interface';
@@ -13,7 +13,7 @@ export class ReviewService {
 
   constructor (private http: HttpClient){};
 
-  public listReviews(show_id: string): Observable<Array<Review> | null>{
+  public listReviews(show_id: string): Observable<Array<Review>>{
     return this.http.get<{reviews: Array<IReview>}>(`https://tv-shows.infinum.academy/shows/${show_id}/reviews`).pipe(
       map(({reviews} : {reviews: Array<IReview>}) =>{
         return reviews.map((reviewData: IReview) => new Review (reviewData));
